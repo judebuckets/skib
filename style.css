@@ -3,6 +3,12 @@ html {
   width: 100%;
 }
 
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+  background-color: #22c55e;
+}
+
 .header {
   background: linear-gradient(to right, #ce1126, #fcd116, #006b3f);
   padding: 2rem;
@@ -14,12 +20,6 @@ html {
   gap: 1rem;
 }
 
-.logo img {
-  height: 80px;
-  width: auto;
-  object-fit: contain;
-}
-
 .header h1 {
   color: white;
   font-size: 2.5rem;
@@ -27,14 +27,25 @@ html {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-body {
-  font-family: sans-serif;
-  margin: 2rem;
-  background-color: #22c55e;
+.navigation {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-h2 {
+.navigation a {
   color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .card {
@@ -45,7 +56,7 @@ h2 {
   color: white;
 }
 
-.card p {
+h2 {
   color: white;
 }
 
@@ -83,12 +94,33 @@ h2 {
   color: white;
 }
 
-<div class="card">
-  <h2>About Me</h2>
-  <ul class="about-list">
-    <li>High school student in NYC</li>
-    <li>Varsity basketball and tennis player</li>
-    <li>Favorite subject: Spanish</li>
-    <li>Planning to go to college</li>
-  </ul>
-</div>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.image-caption {
+  font-family: 'Lobster', cursive;
+  margin-top: 1rem;
+  color: white;
+}
